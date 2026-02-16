@@ -62,7 +62,6 @@ export default function Login() {
                 router.push('/home');
             }, 1000);
         } catch (error) {
-            console.error('Login error:', error);
             toast({
                 title: 'Login failed',
                 description: error.message || 'Please try again.',
