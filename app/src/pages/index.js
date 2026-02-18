@@ -1,4 +1,4 @@
-import { Box, Container, Heading, SimpleGrid, Card, CardBody, Text, Icon } from '@chakra-ui/react';
+import { Box, Container, Heading, SimpleGrid, Card, CardBody, Text, Icon, Button } from '@chakra-ui/react';
 import { AddIcon, LockIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 
@@ -11,9 +11,10 @@ export default function Home() {
       alignItems="center"
       justifyContent="center"
       p={4}
+      position="relative"
     >
       <Container maxW="container.md" textAlign="center">
-        <Heading
+        {/*<Heading
           as="h1"
           size="2xl"
           color="white"
@@ -21,6 +22,23 @@ export default function Home() {
         >
           Welcome to Baby Project
         </Heading>
+
+        <Box position="absolute" top={4} right={4}>
+          <Link href="/dashboard" style={{ textDecoration: 'none' }}>
+            <Button
+              type="button"
+              size="lg"
+              bg="green.400"
+              color="white"
+              _hover={{
+                transform: 'translateY(-2px)',
+                boxShadow: 'lg'
+              }}
+            >
+              Go to Dashboard
+            </Button>
+          </Link>
+        </Box> */}
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
           <Link href="/signup" style={{ textDecoration: 'none' }}>

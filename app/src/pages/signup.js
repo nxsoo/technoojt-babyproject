@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import {
     Box,
     Container,
@@ -18,6 +20,7 @@ export default function SignUp() {
         password: ''
     });
     const [isLoading, setIsLoading] = useState(false);
+    const router = useRouter();
     const toast = useToast();
 
     const handleChange = (e) => {
@@ -55,6 +58,10 @@ export default function SignUp() {
                 isClosable: true,
             });
 
+            setTimeout(() => {
+                router.push('/home');
+            }, 1000);
+
             // Clear form
             setFormData({
                 username: '',
@@ -91,6 +98,22 @@ export default function SignUp() {
                 borderRadius="lg"
                 boxShadow="xl"
             >
+                <Box position="absolute" top={4} left={4}>
+                    <Link href="./" style={{ textDecoration: 'none' }}>
+                        <Button
+                            type="button"
+                            size="lg"
+                            bg="white"
+                            color="black"
+                            _hover={{
+                                transform: 'translateY(-2px)',
+                                boxShadow: 'lg'
+                            }}
+                        >
+                            Back to Home
+                        </Button>
+                    </Link>
+                </Box>
                 <Heading as="h1" size="xl" textAlign="center" mb={8} color="gray.700">
                     Sign Up
                 </Heading>

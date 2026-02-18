@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import {
     Box,
     Container,
@@ -11,6 +12,8 @@ import {
     Button,
     useToast
 } from '@chakra-ui/react';
+
+const API_BASE_URL = 'http://localhost:5000/api/auth';
 
 export default function Login() {
     const [formData, setFormData] = useState({
@@ -32,7 +35,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/login', {
+            const response = await fetch(`${API_BASE_URL}/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -72,6 +75,7 @@ export default function Login() {
         }
     };
 
+
     return (
         <Box
             minH="100vh"
@@ -88,6 +92,22 @@ export default function Login() {
                 borderRadius="lg"
                 boxShadow="xl"
             >
+                <Box position="absolute" top={4} left={4}>
+                    <Link href="./" style={{ textDecoration: 'none' }}>
+                        <Button
+                            type="button"
+                            size="lg"
+                            bg="white"
+                            color="black"
+                            _hover={{
+                                transform: 'translateY(-2px)',
+                                boxShadow: 'lg'
+                            }}
+                        >
+                            Back to Home
+                        </Button>
+                    </Link>
+                </Box>
                 <Heading as="h1" size="xl" textAlign="center" mb={8} color="gray.700">
                     Login
                 </Heading>
