@@ -14,31 +14,14 @@ export default function Home() {
       position="relative"
     >
       <Container maxW="container.md" textAlign="center">
-        {/*<Heading
+        <Heading
           as="h1"
           size="2xl"
           color="white"
           mb={12}
         >
-          Welcome to Baby Project
+          Simple CRUD System
         </Heading>
-
-        <Box position="absolute" top={4} right={4}>
-          <Link href="/dashboard" style={{ textDecoration: 'none' }}>
-            <Button
-              type="button"
-              size="lg"
-              bg="green.400"
-              color="white"
-              _hover={{
-                transform: 'translateY(-2px)',
-                boxShadow: 'lg'
-              }}
-            >
-              Go to Dashboard
-            </Button>
-          </Link>
-        </Box> */}
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
           <Link href="/signup" style={{ textDecoration: 'none' }}>
